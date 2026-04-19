@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>M/s Aman Enterpries | Irfan Ahmad</title>
+<title>M/s Aman Enterprises | Irfan Ahmad</title>
 
 <!-- SOCIAL PREVIEW -->
-<meta property="og:title" content="M/s Aman Enterpries - Irfan Ahmad">
-<meta property="og:description" content="Engineer & Civil Contractors | Ranchi">
+<meta property="og:title" content="M/s Aman Enterprises - Irfan Ahmad">
+<meta property="og:description" content="Engineer & Civil Contractors | Trusted Construction Partner">
 <meta property="og:image" content="https://terasynctech.github.io/aman-enterprises/logo.png?v=2">
-<meta property="og:url" content="https://terasynctech.github.io/aman-enterprises/">
+<meta property="og:url" content="https://terasynctech.github.io/aman-enterprises/?v=2">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://terasynctech.github.io/aman-enterprises/logo.png?v=2">
@@ -23,38 +23,55 @@
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background: #0b0b0b;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #000);
     color: white;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-    max-width: 420px;
-    margin: auto;
-    padding: 20px;
+/* ===== INDUSTRIAL GRID BACKGROUND ===== */
+body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+/* ===== GLOW ===== */
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,100,0,0.3), transparent);
+    top: -100px;
+    left: -100px;
+    animation: glowMove 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes glowMove {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(200px,200px); }
 }
 
 /* ===== CARD ===== */
 .card {
-    background: rgba(255,255,255,0.04);
-    border-radius: 20px;
+    max-width: 420px;
+    margin: 30px auto;
     padding: 25px;
-    backdrop-filter: blur(15px);
-    position: relative;
-    box-shadow: 0 0 30px rgba(255,0,0,0.15);
-    animation: fadeUp 0.8s ease;
-}
-
-/* LEFT ACCENT BAR */
-.card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 6px;
-    background: linear-gradient(#ff0000, #b30000);
-    border-radius: 20px 0 0 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,140,0,0.3);
+    box-shadow: 0 0 60px rgba(255,140,0,0.2);
+    animation: fadeUp 1s ease-in-out;
 }
 
 @keyframes fadeUp {
@@ -64,46 +81,82 @@ body {
 
 /* ===== LOGO ===== */
 .logo {
-    width: 90px;
+    width: 100px;
     margin-bottom: 15px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
 
 /* ===== TITLE ===== */
 h1 {
     margin: 5px 0;
-    font-size: 22px;
+    font-size: 24px;
+    color: #ff8c00;
 }
 
-.name {
-    font-size: 16px;
-    color: #bbb;
+/* ===== TEXT ===== */
+p {
+    margin: 5px 0;
+    color: #ccc;
 }
 
-/* ===== ROLE ===== */
-.role {
-    margin: 8px 0;
-    color: #ff4d4d;
-    font-weight: 500;
+/* ===== BADGE ===== */
+.badge {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #ff8c00;
+    color: #ff8c00;
+    display: inline-block;
+    font-size: 13px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px #ff8c00; }
+    50% { box-shadow: 0 0 25px #ff8c00; }
+    100% { box-shadow: 0 0 5px #ff8c00; }
 }
 
 /* ===== BUTTON ===== */
 .btn {
     display: block;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 10px;
+    margin: 12px auto;
+    padding: 14px;
+    width: 90%;
+    border-radius: 35px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
     color: white;
-    background: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
+/* SHINE EFFECT */
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    top: 0;
+    left: -100%;
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
 .btn:hover {
-    background: #ff0000;
+    transform: scale(1.06);
 }
 
 /* RIPPLE */
@@ -122,49 +175,82 @@ h1 {
     }
 }
 
+/* ===== SERVICES ===== */
+.services {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.services h3 {
+    text-align: center;
+    color: #ff8c00;
+}
+
+.services li {
+    margin: 8px 0;
+    color: #ddd;
+}
+
 /* ===== FOOTER ===== */
 .footer {
     margin-top: 15px;
     font-size: 12px;
-    color: #888;
-    text-align: center;
+    color: #aaa;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
 <div class="card">
 
 <img src="logo.png" class="logo">
 
-<h1>M/s Aman Enterpries</h1>
-<div class="name">Irfan Ahmad</div>
-<div class="role">Engineer & Civil Contractors</div>
+<h1>M/s Aman Enterprises</h1>
+
+<p><b>Irfan Ahmad</b></p>
+<p>Engineer & Civil Contractors</p>
+
+<div class="badge">
+Building Trust Since Years
+</div>
 
 <a class="btn" href="tel:+919934512382">📞 Call Now</a>
 
 <a class="btn" href="https://wa.me/919934512382?text=Hi%20I%20am%20interested%20in%20your%20construction%20services">
-💬 WhatsApp</a>
+💬 WhatsApp
+</a>
 
-<a class="btn" href="mailto:irfanjonty@gmail.com">📧 Email</a>
+<a class="btn" href="mailto:irfanjonty@gmail.com">
+📧 Email
+</a>
 
-<a class="btn" href="https://maps.google.com/?q=Doranda+Ranchi+Jharkhand" target="_blank">
-📍 View Location</a>
+<a class="btn" href="https://maps.google.com/?q=Ranchi+Jharkhand" target="_blank">
+📍 View Location
+</a>
 
-<a class="btn" href="contact.vcf" download>📥 Save Contact</a>
+<a class="btn" href="contact.vcf" download>
+📥 Save Contact
+</a>
+
+<div class="services">
+<h3>🏗️ Our Services</h3>
+<ul>
+<li>Residential Construction</li>
+<li>Commercial Projects</li>
+<li>Interior & Exterior Works</li>
+<li>Renovation & Maintenance</li>
+<li>Contract & Turnkey Projects</li>
+</ul>
+</div>
 
 <div class="footer">
 Powered by TeraCard 🚀
 </div>
 
 </div>
-</div>
 
-<!-- RIPPLE SCRIPT -->
 <script>
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function (e) {
