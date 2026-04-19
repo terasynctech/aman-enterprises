@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aman Enterprises | Irfan Ahmed</title>
+
+<!-- SOCIAL PREVIEW -->
+<meta property="og:title" content="Aman Enterprises - Irfan Ahmed">
+<meta property="og:description" content="Engineer & Civil Contractors | Ranchi">
+<meta property="og:image" content="https://terasynctech.github.io/aman-enterprises/logo.png?v=1">
+<meta property="og:url" content="https://terasynctech.github.io/aman-enterprises/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://terasynctech.github.io/aman-enterprises/logo.png?v=1">
+
+<link rel="icon" href="logo.png">
+
+<style>
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #000000, #1a0000, #000);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* ===== GLOW BACKGROUND ===== */
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,0,0,0.3), transparent);
+    top: -100px;
+    left: -100px;
+    animation: moveGlow 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes moveGlow {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(200px,200px); }
+}
+
+/* ===== CARD ===== */
+.card {
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 50px rgba(255,0,0,0.3);
+    animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* ===== LOGO ===== */
+.logo {
+    width: 110px;
+    margin-bottom: 15px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== TITLE ===== */
+h1 {
+    color: #ff4d4d;
+    margin: 5px 0;
+}
+
+/* ===== TEXT ===== */
+p {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+/* ===== BADGE ===== */
+.badge {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px #ff0000; }
+    50% { box-shadow: 0 0 25px #ff0000; }
+    100% { box-shadow: 0 0 5px #ff0000; }
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: block;
+    margin: 12px auto;
+    padding: 13px;
+    width: 90%;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff0000, #b30000);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: scale(1.06);
+}
+
+/* SHINE */
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    left: -100%;
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* RIPPLE */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background: rgba(255,255,255,0.6);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="logo.png" class="logo">
+
+<h1>Aman Enterprises</h1>
+
+<p><b>Irfan Ahmed</b></p>
+<p>Engineer & Civil Contractors</p>
+
+<div class="badge">
+Trusted Construction Partner
+</div>
+
+<a class="btn" href="tel:+919934512382">📞 Call Now</a>
+
+<a class="btn" href="https://wa.me/919934512382?text=Hi%20I%20am%20interested%20in%20your%20services">
+💬 WhatsApp
+</a>
+
+<a class="btn" href="mailto:irfaninv@gmail.com">
+📧 Email
+</a>
+
+<a class="btn" href="https://maps.google.com/?q=Doranda+Ranchi+Jharkhand" target="_blank">
+📍 View Location
+</a>
+
+<a class="btn" href="contact.vcf" download>
+📥 Save Contact
+</a>
+
+<div class="footer">
+Powered by TeraCard 🚀
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function (e) {
+        const circle = document.createElement("span");
+        const diameter = Math.max(this.clientWidth, this.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = diameter + "px";
+        circle.style.left = (e.clientX - this.getBoundingClientRect().left - radius) + "px";
+        circle.style.top = (e.clientY - this.getBoundingClientRect().top - radius) + "px";
+        circle.classList.add("ripple");
+
+        const ripple = this.getElementsByClassName("ripple")[0];
+        if (ripple) ripple.remove();
+
+        this.appendChild(circle);
+    });
+});
+</script>
+
+</body>
+</html>
